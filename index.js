@@ -7,6 +7,7 @@ import cors from 'cors';
 import "dotenv/config";
 import ModuleRoutes from "./Kambaz/Modules/routes.js";
 import EnrollmentRoutes from "./Kambaz/Enrollments/routes.js";
+import Hello from "./Hello.js";
 const app = express();
 app.use(
     cors({
@@ -29,6 +30,7 @@ if (process.env.NODE_ENV !== "development") {
 }
 app.use(session(sessionOptions));
 app.use(express.json());
+Hello(app);
 Lab5(app);
 UserRoutes(app);
 CourseRoutes(app);
